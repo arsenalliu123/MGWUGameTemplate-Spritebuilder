@@ -31,7 +31,8 @@
     
     /*load sun (a.k.a: level)*/
     _sun = (Sun *)[CCBReader load:@"Sun1"];
-    CGPoint planetPosition = ccp(400, 160);
+    NSLog(@"%f %f",self.contentSizeInPoints.width,self.contentSizeInPoints.height);
+    CGPoint planetPosition = ccp(360, 160);
     _sun.position = [_physicsNode convertToNodeSpace:planetPosition];
     [_physicsNode addChild:_sun];
     
@@ -42,7 +43,6 @@
     /*initialize the score*/
     _scoreval = 0;
     _scorereq = _sun.requirement;
-    NSLog(@"%d",_scorereq);
     _requirelabel.string = [NSString stringWithFormat:@"%d", _scorereq];
     _scorelabel.string = [NSString stringWithFormat:@"%d", _scoreval];
     
