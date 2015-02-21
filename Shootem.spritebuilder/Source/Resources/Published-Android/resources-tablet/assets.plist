@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>assets/Earth-Planet@4x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 137}, {196, 196}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {196, 196}}</string>
+			<key>sourceSize</key>
+			<string>{196, 196}</string>
+		</dict>
+		<key>assets/Galaxy@4x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {275, 134}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {275, 134}}</string>
+			<key>sourceSize</key>
+			<string>{275, 134}</string>
+		</dict>
+		<key>assets/Giant-Planet@4x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 335}, {136, 136}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {136, 136}}</string>
+			<key>sourceSize</key>
+			<string>{136, 136}</string>
+		</dict>
+		<key>assets/Sun@4x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{278, 1}, {228, 228}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {228, 228}}</string>
+			<key>sourceSize</key>
+			<string>{228, 228}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{512, 512}</string>
+		<key>textureFileName</key>
+		<string>assets.png</string>
+	</dict>
+</dict>
+</plist>
