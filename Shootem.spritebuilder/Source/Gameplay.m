@@ -13,6 +13,10 @@
 #import "Popup.h"
 
 
+static NSString * const kFirstLevel = @"Sun1";
+static NSString *selectedLevel = @"Sun1";
+static float rduration = 0;
+
 @implementation Gameplay{
     CCPhysicsNode *_physicsNode;
     Planet *_planet;
@@ -30,14 +34,15 @@
     _physicsNode.collisionDelegate = self;
     
     /*load sun (a.k.a: level)*/
-    _sun = (Sun *)[CCBReader load:@"Sun1"];
-    NSLog(@"%f %f",self.contentSizeInPoints.width,self.contentSizeInPoints.height);
+    NSLog(@"%@",selectedLevel);
+    _sun = (Sun *)[CCBReader load:selectedLevel owner:self];
     CGPoint planetPosition = ccp(360, 160);
     _sun.position = [_physicsNode convertToNodeSpace:planetPosition];
     [_physicsNode addChild:_sun];
     
     /*let the sun rotate!*/
-    action = [CCActionRepeatForever actionWithAction:[CCActionRotateBy actionWithDuration:5.0 angle:360]];
+    rduration = _sun.rotateduration;
+    action = [CCActionRepeatForever actionWithAction:[CCActionRotateBy actionWithDuration:rduration angle:360]];
     [_sun runAction:action];
     
     /*initialize the score*/
@@ -108,21 +113,25 @@
 }
 
 
-- (void)retry {
+- (void)loadnextLevel {
     
-    /*retry the current level*/
-    /* TODO: next level*/
+    selectedLevel = _sun.nextLevelName;
     
-    //selectedLevel = _loadedLevel.nextLevelName;
     CCScene *nextScene = nil;
     
-    //if (selectedLevel) {
-    nextScene = [CCBReader loadAsScene:@"Gameplay"];
-    //} else {
-    //    selectedLevel = kFirstLevel;
-    //    nextScene = [CCBReader loadAsScene:@"StartScene"];
-    //}
+    if (selectedLevel) {
+        nextScene = [CCBReader loadAsScene:@"Gameplay"];
+    } else {
+        selectedLevel = kFirstLevel;
+        nextScene = [CCBReader loadAsScene:@"MainScene"];
+    }
     
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
+    [[CCDirector sharedDirector] presentScene:nextScene withTransition:transition];
+}
+
+- (void)retry {
+    CCScene *nextScene = [CCBReader loadAsScene:@"Gameplay"];
     CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
     [[CCDirector sharedDirector] presentScene:nextScene withTransition:transition];
 }

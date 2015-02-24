@@ -245,8 +245,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -318,7 +316,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string>retry</string>
+							<string>loadnextLevel</string>
 							<integer>2</integer>
 						</array>
 					</dict>
@@ -363,7 +361,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Shootem Again</string>
+							<string>Next Level</string>
 							<false/>
 						</array>
 					</dict>
@@ -573,6 +571,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
