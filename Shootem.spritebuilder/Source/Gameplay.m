@@ -15,7 +15,6 @@
 
 static NSString * const kFirstLevel = @"Sun1";
 static NSString *selectedLevel = @"Sun1";
-static float rduration = 0;
 
 @implementation Gameplay{
     CCPhysicsNode *_physicsNode;
@@ -34,15 +33,18 @@ static float rduration = 0;
     _physicsNode.collisionDelegate = self;
     
     /*load sun (a.k.a: level)*/
-    NSLog(@"%@",selectedLevel);
     _sun = (Sun *)[CCBReader load:selectedLevel owner:self];
     CGPoint planetPosition = ccp(360, 160);
     _sun.position = [_physicsNode convertToNodeSpace:planetPosition];
     [_physicsNode addChild:_sun];
     
     /*let the sun rotate!*/
-    rduration = _sun.rotateduration;
-    action = [CCActionRepeatForever actionWithAction:[CCActionRotateBy actionWithDuration:rduration angle:360]];
+    
+    CCAction *action1 = [CCActionRotateBy actionWithDuration:_sun.rotateDuration1 angle:400*_sun.rotateDirection1];
+    CCAction *action2 = [CCActionRotateBy actionWithDuration:_sun.rotateDuration2 angle:400*_sun.rotateDirection2];
+    NSArray *actionArray = @[action1,action2];
+    id sequence = [CCActionSequence actionWithArray:actionArray];
+    action = [CCActionRepeatForever actionWithAction:sequence];
     [_sun runAction:action];
     
     /*initialize the score*/
@@ -64,7 +66,7 @@ static float rduration = 0;
     _planet = (Planet *)[CCBReader load:@"Planet"];
     CGPoint planetPosition = ccp(50, 160);
     _planet.position = [_physicsNode convertToNodeSpace:planetPosition];
-    _planet.scale = 0.4;
+    _planet.scale = 0.28;
     [_physicsNode addChild:_planet];
     
     /*let the planet move!*/
@@ -78,16 +80,13 @@ static float rduration = 0;
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair sun:(CCNode *)sun planet:(CCNode *)planet{
     
-    /*set the planet not to move and remove it from physicsNode*/
+    /*set the planet not to move*/
     CGPoint tmp_pos = [planet convertToWorldSpace:ccp(39.2,50)];
+    tmp_pos = [sun convertToNodeSpace:tmp_pos];
     planet.physicsBody.velocity = ccp(0, 0);
-    planet.position = [sun convertToNodeSpace:tmp_pos];
-    [planet removeFromParent];
-    planet.physicsBody = nil;
-    
     /*if hit any other planet, call game over popup*/
     for(CCNode *child in _sun.children){
-        float distance = (child.position.x-planet.position.x)*(child.position.x-planet.position.x)+(child.position.y-planet.position.y)*(child.position.y-planet.position.y);
+        float distance = (child.position.x-tmp_pos.x)*(child.position.x-tmp_pos.x)+(child.position.y-tmp_pos.y)*(child.position.y-tmp_pos.y);
         float width = planet.contentSizeInPoints.width*planet.scale;
         if(distance < width*width){
             self.paused = YES;
@@ -98,8 +97,12 @@ static float rduration = 0;
         }
     }
     
-    /*else add the planet to the sun, add score and see if the player wins*/
+    planet.position = tmp_pos;
+    [planet removeFromParent];
+    planet.physicsBody = nil;
     [_sun addChild:planet];
+    
+    /*else add the planet to the sun, add score and see if the player wins*/
     _scoreval++;
     _scorelabel.string = [NSString stringWithFormat:@"%d", _scoreval];
     if(_scoreval == _scorereq){

@@ -71,8 +71,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-80</real>
-							<real>57</real>
+							<real>-12</real>
+							<real>-56</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -85,8 +85,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.57599997520446777</real>
-							<real>0.57599997520446777</real>
+							<real>0.40000000596046448</real>
+							<real>0.40000000596046448</real>
 							<true/>
 							<integer>0</integer>
 						</array>
@@ -114,11 +114,51 @@
 				<key>type</key>
 				<integer>0</integer>
 				<key>value</key>
-				<string>10</string>
+				<string>12</string>
 			</dict>
 			<dict>
 				<key>name</key>
-				<string>rotateduration</string>
+				<string>rotateDuration1</string>
+				<key>optimized</key>
+				<false/>
+				<key>type</key>
+				<integer>1</integer>
+				<key>value</key>
+				<string>5.000000</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>nextLevelName</string>
+				<key>optimized</key>
+				<false/>
+				<key>type</key>
+				<integer>3</integer>
+				<key>value</key>
+				<string>Sun3</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>rotateDirection1</string>
+				<key>optimized</key>
+				<false/>
+				<key>type</key>
+				<integer>0</integer>
+				<key>value</key>
+				<string>1</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>rotateDirection2</string>
+				<key>optimized</key>
+				<false/>
+				<key>type</key>
+				<integer>0</integer>
+				<key>value</key>
+				<string>1</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>rotateDuration2</string>
 				<key>optimized</key>
 				<false/>
 				<key>type</key>
