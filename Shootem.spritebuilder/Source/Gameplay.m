@@ -33,15 +33,25 @@ static NSString *selectedLevel = @"Sun1";
     _physicsNode.collisionDelegate = self;
     
     /*load sun (a.k.a: level)*/
+    
+    //load the last played level
+    NSString *tmpLevel;
+    NSUserDefaults *loadLevel = [NSUserDefaults standardUserDefaults];
+    tmpLevel = [loadLevel stringForKey:@"level"];
+    if(tmpLevel != nil){
+        selectedLevel = tmpLevel;
+    }
+    NSLog(selectedLevel);
     _sun = (Sun *)[CCBReader load:selectedLevel owner:self];
     CGPoint planetPosition = ccp(360, 160);
     _sun.position = [_physicsNode convertToNodeSpace:planetPosition];
     [_physicsNode addChild:_sun];
     
     /*let the sun rotate!*/
+    //TODO: more complicated levels
     
-    CCAction *action1 = [CCActionRotateBy actionWithDuration:_sun.rotateDuration1 angle:400*_sun.rotateDirection1];
-    CCAction *action2 = [CCActionRotateBy actionWithDuration:_sun.rotateDuration2 angle:400*_sun.rotateDirection2];
+    CCAction *action1 = [CCActionRotateBy actionWithDuration:_sun.rotateDuration1 angle:150*_sun.rotateDirection1];
+    CCAction *action2 = [CCActionRotateBy actionWithDuration:_sun.rotateDuration2 angle:50*_sun.rotateDirection2];
     NSArray *actionArray = @[action1,action2];
     id sequence = [CCActionSequence actionWithArray:actionArray];
     action = [CCActionRepeatForever actionWithAction:sequence];
@@ -119,6 +129,11 @@ static NSString *selectedLevel = @"Sun1";
 - (void)loadnextLevel {
     
     selectedLevel = _sun.nextLevelName;
+    
+    NSUserDefaults *storeLevel = [NSUserDefaults standardUserDefaults];
+    [storeLevel setValue:selectedLevel forKey:@"level"];
+    [storeLevel synchronize];
+    NSLog(@"level saved");
     
     CCScene *nextScene = nil;
     
