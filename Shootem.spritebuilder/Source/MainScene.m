@@ -1,9 +1,18 @@
 #import "MainScene.h"
 
-@implementation MainScene
+@implementation MainScene{
+    CCButton *resumeButton;
+}
+
+- (void)didLoadFromCCB{
+    NSUserDefaults *storeLevel = [NSUserDefaults standardUserDefaults];
+    if ([storeLevel objectForKey:@"level"] == nil) {
+        resumeButton.enabled = false;
+    }
+
+}
 
 - (void)newGame {
-    
     //reset played level
     NSUserDefaults *storeLevel = [NSUserDefaults standardUserDefaults];
     [storeLevel setValue:@"Sun1" forKey:@"level"];

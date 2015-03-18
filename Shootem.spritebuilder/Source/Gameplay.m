@@ -41,7 +41,7 @@ static NSString *selectedLevel = @"Sun1";
     if(tmpLevel != nil){
         selectedLevel = tmpLevel;
     }
-    NSLog(selectedLevel);
+    //NSLog(selectedLevel);
     _sun = (Sun *)[CCBReader load:selectedLevel owner:self];
     CGPoint planetPosition = ccp(360, 160);
     _sun.position = [_physicsNode convertToNodeSpace:planetPosition];
@@ -50,8 +50,8 @@ static NSString *selectedLevel = @"Sun1";
     /*let the sun rotate!*/
     //TODO: more complicated levels
     
-    CCAction *action1 = [CCActionRotateBy actionWithDuration:_sun.rotateDuration1 angle:150*_sun.rotateDirection1];
-    CCAction *action2 = [CCActionRotateBy actionWithDuration:_sun.rotateDuration2 angle:50*_sun.rotateDirection2];
+    CCAction *action1 = [CCActionRotateBy actionWithDuration:_sun.rotateDuration1 angle:180*_sun.rotateDirection1];
+    CCAction *action2 = [CCActionRotateBy actionWithDuration:_sun.rotateDuration2 angle:60*_sun.rotateDirection2];
     NSArray *actionArray = @[action1,action2];
     id sequence = [CCActionSequence actionWithArray:actionArray];
     action = [CCActionRepeatForever actionWithAction:sequence];
