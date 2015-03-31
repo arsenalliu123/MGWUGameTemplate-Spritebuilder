@@ -114,17 +114,17 @@
 				<key>type</key>
 				<integer>0</integer>
 				<key>value</key>
-				<string>12</string>
+				<string>10</string>
 			</dict>
 			<dict>
 				<key>name</key>
-				<string>rotateDuration1</string>
+				<string>rotateSpeed1</string>
 				<key>optimized</key>
 				<false/>
 				<key>type</key>
 				<integer>1</integer>
 				<key>value</key>
-				<string>1.800000</string>
+				<string>100.000000</string>
 			</dict>
 			<dict>
 				<key>name</key>
@@ -138,33 +138,13 @@
 			</dict>
 			<dict>
 				<key>name</key>
-				<string>rotateDirection1</string>
-				<key>optimized</key>
-				<false/>
-				<key>type</key>
-				<integer>0</integer>
-				<key>value</key>
-				<string>1</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>rotateDirection2</string>
-				<key>optimized</key>
-				<false/>
-				<key>type</key>
-				<integer>0</integer>
-				<key>value</key>
-				<string>1</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>rotateDuration2</string>
+				<string>rotateSpeed2</string>
 				<key>optimized</key>
 				<false/>
 				<key>type</key>
 				<integer>1</integer>
 				<key>value</key>
-				<string>0.800000</string>
+				<string>150.000000</string>
 			</dict>
 		</array>
 		<key>displayName</key>

@@ -50,8 +50,10 @@ static NSString *selectedLevel = @"Sun1";
     /*let the sun rotate!*/
     //TODO: more complicated levels
     
-    CCAction *action1 = [CCActionRotateBy actionWithDuration:_sun.rotateDuration1 angle:180*_sun.rotateDirection1];
-    CCAction *action2 = [CCActionRotateBy actionWithDuration:_sun.rotateDuration2 angle:60*_sun.rotateDirection2];
+    float time1 = 1.8;
+    float time2 = 0.6;
+    CCAction *action1 = [CCActionRotateBy actionWithDuration:time1 angle:time1*_sun.rotateSpeed1];
+    CCAction *action2 = [CCActionRotateBy actionWithDuration:time2 angle:time2*_sun.rotateSpeed2];
     NSArray *actionArray = @[action1,action2];
     id sequence = [CCActionSequence actionWithArray:actionArray];
     action = [CCActionRepeatForever actionWithAction:sequence];

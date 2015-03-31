@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>11</integer>
+	<integer>5</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -71,8 +71,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-5</real>
-							<real>-60</real>
+							<real>-12</real>
+							<real>-56</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -114,17 +114,17 @@
 				<key>type</key>
 				<integer>0</integer>
 				<key>value</key>
-				<string>15</string>
+				<string>10</string>
 			</dict>
 			<dict>
 				<key>name</key>
-				<string>rotateDuration1</string>
+				<string>rotateSpeed1</string>
 				<key>optimized</key>
 				<false/>
 				<key>type</key>
 				<integer>1</integer>
 				<key>value</key>
-				<string>1.700000</string>
+				<string>-150.000000</string>
 			</dict>
 			<dict>
 				<key>name</key>
@@ -138,33 +138,13 @@
 			</dict>
 			<dict>
 				<key>name</key>
-				<string>rotateDirection1</string>
-				<key>optimized</key>
-				<false/>
-				<key>type</key>
-				<integer>0</integer>
-				<key>value</key>
-				<string>-1</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>rotateDirection2</string>
-				<key>optimized</key>
-				<false/>
-				<key>type</key>
-				<integer>0</integer>
-				<key>value</key>
-				<string>1</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>rotateDuration2</string>
+				<string>rotateSpeed2</string>
 				<key>optimized</key>
 				<false/>
 				<key>type</key>
 				<integer>1</integer>
 				<key>value</key>
-				<string>0.700000</string>
+				<string>100.000000</string>
 			</dict>
 		</array>
 		<key>displayName</key>

@@ -13,10 +13,7 @@
 @property (nonatomic, assign) int requirement;
 @property (nonatomic, copy) NSString* nextLevelName;
 
-@property (nonatomic, assign) int rotateDirection1;
-@property (nonatomic, assign) float rotateDuration1;
-
-@property (nonatomic, assign) int rotateDirection2;
-@property (nonatomic, assign) float rotateDuration2;
+@property (nonatomic, assign) float rotateSpeed1;
+@property (nonatomic, assign) float rotateSpeed2;
 
 @end
