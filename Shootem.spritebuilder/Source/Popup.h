@@ -7,7 +7,10 @@
 //
 
 #import "CCNode.h"
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface Popup : CCNode
+
+- (void) sharing;
 
 @end

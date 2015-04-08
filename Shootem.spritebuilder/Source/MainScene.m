@@ -29,4 +29,10 @@
     [[CCDirector sharedDirector] presentScene:gameplayScene withTransition:transition];
 }
 
+- (void)highScore{
+    CCScene *hsScene = [CCBReader loadAsScene:@"HighScore"];
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
+    [[CCDirector sharedDirector] presentScene:hsScene withTransition:transition];
+}
+
 @end

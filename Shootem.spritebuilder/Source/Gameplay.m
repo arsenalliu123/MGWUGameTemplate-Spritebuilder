@@ -25,14 +25,18 @@ static NSString *selectedLevel = @"Sun1";
     CCLabelTTF *_requirelabel;
     int _scoreval;
     int _scorereq;
+    float rotateSpeed1;
+    float rotateSpeed2;
+}
+
+- (int)getLevel:(NSString *)selectedLevel{
+    return [[selectedLevel substringFromIndex:3] intValue];
 }
 
 - (void)didLoadFromCCB{
     
     self.userInteractionEnabled = TRUE;
     _physicsNode.collisionDelegate = self;
-    
-    /*load sun (a.k.a: level)*/
     
     //load the last played level
     NSString *tmpLevel;
@@ -41,7 +45,8 @@ static NSString *selectedLevel = @"Sun1";
     if(tmpLevel != nil){
         selectedLevel = tmpLevel;
     }
-    //NSLog(selectedLevel);
+    
+        
     _sun = (Sun *)[CCBReader load:selectedLevel owner:self];
     CGPoint planetPosition = ccp(360, 160);
     _sun.position = [_physicsNode convertToNodeSpace:planetPosition];
@@ -50,16 +55,28 @@ static NSString *selectedLevel = @"Sun1";
     /*let the sun rotate!*/
     //TODO: more complicated levels
     
+    int currentLevel = [self getLevel:selectedLevel];
     float time1 = 1.8;
     float time2 = 0.6;
+    
+    if (currentLevel>5) {
+        time1 = 1.8+(arc4random_uniform(1000)-500)/1000.0*0.6;
+        time2 = 0.6+(arc4random_uniform(1000)-500)/1000.0*0.2;
+    }
+    
     CCAction *action1 = [CCActionRotateBy actionWithDuration:time1 angle:time1*_sun.rotateSpeed1];
+    action1.tag = 1;
     CCAction *action2 = [CCActionRotateBy actionWithDuration:time2 angle:time2*_sun.rotateSpeed2];
+    action2.tag = 2;
     NSArray *actionArray = @[action1,action2];
     id sequence = [CCActionSequence actionWithArray:actionArray];
     action = [CCActionRepeatForever actionWithAction:sequence];
     [_sun runAction:action];
-    
-    /*initialize the score*/
+    /*
+    action.tag = 1;
+    CCActionRepeatForever *a = (CCActionRepeatForever *)[_sun getActionByTag:1];
+    CCActionSequence *b = (CCActionSequence *)a.innerAction;
+     */
     _scoreval = 0;
     _scorereq = _sun.requirement;
     _requirelabel.string = [NSString stringWithFormat:@"%d", _scorereq];
@@ -104,6 +121,7 @@ static NSString *selectedLevel = @"Sun1";
             self.paused = YES;
             Popup *popup = (Popup *)[CCBReader load:@"LosePopup" owner:self];
             popup.position = ccp(0,0);
+            [popup sharing];
             [self addChild:popup];
             return YES;
         }
@@ -121,6 +139,14 @@ static NSString *selectedLevel = @"Sun1";
         self.paused = YES;
         Popup *popup = (Popup *)[CCBReader load:@"WinPopup" owner:self];
         popup.position = ccp(0,0);
+        NSUserDefaults *storeLevel = [NSUserDefaults standardUserDefaults];
+        NSString *storedLevel = [storeLevel objectForKey:@"highScore"];
+        if(storedLevel==nil||[self getLevel:storedLevel]<[self getLevel:selectedLevel]){
+            NSLog(@"high score%d", [self getLevel:selectedLevel]);
+            NSUserDefaults *storeLevel = [NSUserDefaults standardUserDefaults];
+            [storeLevel setValue:selectedLevel forKey:@"highScore"];
+            [storeLevel synchronize];
+        }
         [self addChild:popup];
         return YES;
     }
@@ -135,7 +161,6 @@ static NSString *selectedLevel = @"Sun1";
     NSUserDefaults *storeLevel = [NSUserDefaults standardUserDefaults];
     [storeLevel setValue:selectedLevel forKey:@"level"];
     [storeLevel synchronize];
-    NSLog(@"level saved");
     
     CCScene *nextScene = nil;
     

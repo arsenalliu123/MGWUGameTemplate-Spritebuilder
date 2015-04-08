@@ -11,6 +11,18 @@
 		57A4EE1B1A98239D0088D2C8 /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A4EE1A1A98239D0088D2C8 /* Gameplay.m */; };
 		57A4EE241A984A3C0088D2C8 /* Sun.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A4EE231A984A3C0088D2C8 /* Sun.m */; };
 		57A4EE271A991F3C0088D2C8 /* Popup.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A4EE261A991F3C0088D2C8 /* Popup.m */; };
+		57E1663B1ACB5614003B0C21 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E166381ACB5614003B0C21 /* FBSDKCoreKit.framework */; };
+		57E1663C1ACB5614003B0C21 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E166381ACB5614003B0C21 /* FBSDKCoreKit.framework */; };
+		57E1663D1ACB5615003B0C21 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E166381ACB5614003B0C21 /* FBSDKCoreKit.framework */; };
+		57E1663E1ACB5615003B0C21 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E166391ACB5614003B0C21 /* FBSDKLoginKit.framework */; };
+		57E1663F1ACB5615003B0C21 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E166391ACB5614003B0C21 /* FBSDKLoginKit.framework */; };
+		57E166401ACB5615003B0C21 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E166391ACB5614003B0C21 /* FBSDKLoginKit.framework */; };
+		57E166411ACB5615003B0C21 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E1663A1ACB5614003B0C21 /* FBSDKShareKit.framework */; };
+		57E166421ACB5615003B0C21 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E1663A1ACB5614003B0C21 /* FBSDKShareKit.framework */; };
+		57E166431ACB5615003B0C21 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E1663A1ACB5614003B0C21 /* FBSDKShareKit.framework */; };
+		57E166581AD4A1CE003B0C21 /* HighScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E166571AD4A1CE003B0C21 /* HighScore.m */; };
+		57E166591AD4A1CE003B0C21 /* HighScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E166571AD4A1CE003B0C21 /* HighScore.m */; };
+		57E1665A1AD4A1CE003B0C21 /* HighScore.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E166571AD4A1CE003B0C21 /* HighScore.m */; };
 		5B121030197484FA004C1E1D /* ShootemActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* ShootemActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
@@ -161,6 +173,11 @@
 		57A4EE231A984A3C0088D2C8 /* Sun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sun.m; path = Source/Sun.m; sourceTree = "<group>"; };
 		57A4EE251A991F3C0088D2C8 /* Popup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Popup.h; path = Source/Popup.h; sourceTree = "<group>"; };
 		57A4EE261A991F3C0088D2C8 /* Popup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Popup.m; path = Source/Popup.m; sourceTree = "<group>"; };
+		57E166381ACB5614003B0C21 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		57E166391ACB5614003B0C21 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		57E1663A1ACB5614003B0C21 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		57E166561AD4A1CE003B0C21 /* HighScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScore.h; path = Source/HighScore.h; sourceTree = "<group>"; };
+		57E166571AD4A1CE003B0C21 /* HighScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScore.m; path = Source/HighScore.m; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -234,12 +251,15 @@
 			files = (
 				7A97911719E631C6001FFC4D /* libcocos2d-mac.a in Frameworks */,
 				7A59493D19E37FB200F65F90 /* libz.dylib in Frameworks */,
+				57E166431ACB5615003B0C21 /* FBSDKShareKit.framework in Frameworks */,
 				7A59493B19E37F9300F65F90 /* OpenGL.framework in Frameworks */,
 				7A4036F519DE3FA8007B6E8F /* AppKit.framework in Frameworks */,
+				57E166401ACB5615003B0C21 /* FBSDKLoginKit.framework in Frameworks */,
 				7A4036F319DE3FA0007B6E8F /* CoreText.framework in Frameworks */,
 				7A4036EE19DE3F93007B6E8F /* OpenAL.framework in Frameworks */,
 				7A4036EB19DE3F8E007B6E8F /* GLKit.framework in Frameworks */,
 				7A4036EF19DE3F95007B6E8F /* AudioToolbox.framework in Frameworks */,
+				57E1663D1ACB5615003B0C21 /* FBSDKCoreKit.framework in Frameworks */,
 				7A4036F019DE3F97007B6E8F /* AVFoundation.framework in Frameworks */,
 				7A4036EC19DE3F90007B6E8F /* QuartzCore.framework in Frameworks */,
 				7A4036F119DE3F9C007B6E8F /* Foundation.framework in Frameworks */,
@@ -253,7 +273,10 @@
 			files = (
 				BC5399D81A44DCC90063F482 /* AndroidKit.framework in Frameworks */,
 				BC5399D91A44DCC90063F482 /* CoreJava.framework in Frameworks */,
+				57E1663F1ACB5615003B0C21 /* FBSDKLoginKit.framework in Frameworks */,
 				BC5399DA1A44DCC90063F482 /* GLActivityKit.framework in Frameworks */,
+				57E166421ACB5615003B0C21 /* FBSDKShareKit.framework in Frameworks */,
+				57E1663C1ACB5614003B0C21 /* FBSDKCoreKit.framework in Frameworks */,
 				BC5399DB1A44DCC90063F482 /* JavaFoundation.framework in Frameworks */,
 				BC5399DC1A44DCC90063F482 /* JavaKit.framework in Frameworks */,
 				7A97910819E62F84001FFC4D /* libcocos2dAndroid.a in Frameworks */,
@@ -269,13 +292,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A97911819E631CD001FFC4D /* libcocos2d.a in Frameworks */,
+				57E1663B1ACB5614003B0C21 /* FBSDKCoreKit.framework in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
 				B77F1B3417B978D7009739AE /* OpenGLES.framework in Frameworks */,
 				B77F1B3617B978D7009739AE /* OpenAL.framework in Frameworks */,
 				B77F1B3817B978D7009739AE /* AudioToolbox.framework in Frameworks */,
+				57E1663E1ACB5615003B0C21 /* FBSDKLoginKit.framework in Frameworks */,
 				B77F1B3A17B978D7009739AE /* AVFoundation.framework in Frameworks */,
 				B77F1B3C17B978D7009739AE /* UIKit.framework in Frameworks */,
+				57E166411ACB5615003B0C21 /* FBSDKShareKit.framework in Frameworks */,
 				B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */,
 				B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */,
 				B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */,
@@ -451,6 +477,8 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
+				57E166561AD4A1CE003B0C21 /* HighScore.h */,
+				57E166571AD4A1CE003B0C21 /* HighScore.m */,
 				57A4EE0D1A981FE10088D2C8 /* Planet.h */,
 				57A4EE0E1A981FE10088D2C8 /* Planet.m */,
 				D352B48019EC608A00829775 /* MetalShaders */,
@@ -510,6 +538,9 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57E166381ACB5614003B0C21 /* FBSDKCoreKit.framework */,
+				57E166391ACB5614003B0C21 /* FBSDKLoginKit.framework */,
+				57E1663A1ACB5614003B0C21 /* FBSDKShareKit.framework */,
 				BC5399D31A44DCC90063F482 /* AndroidKit.framework */,
 				BC5399D41A44DCC90063F482 /* CoreJava.framework */,
 				BC5399D51A44DCC90063F482 /* GLActivityKit.framework */,
@@ -819,6 +850,7 @@
 			files = (
 				7A4036E819DE3F33007B6E8F /* MainScene.m in Sources */,
 				7A40360419DDEE84007B6E8F /* main.m in Sources */,
+				57E1665A1AD4A1CE003B0C21 /* HighScore.m in Sources */,
 				7A59498E19E3941300F65F90 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -829,6 +861,7 @@
 			files = (
 				927F619E196C771E000F43EF /* MainScene.m in Sources */,
 				5B121030197484FA004C1E1D /* ShootemActivity.m in Sources */,
+				57E166591AD4A1CE003B0C21 /* HighScore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -838,6 +871,7 @@
 			files = (
 				57A4EE241A984A3C0088D2C8 /* Sun.m in Sources */,
 				57A4EE271A991F3C0088D2C8 /* Popup.m in Sources */,
+				57E166581AD4A1CE003B0C21 /* HighScore.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
@@ -883,6 +917,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/river/Documents/FacebookSDK,
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -932,6 +970,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/river/Documents/FacebookSDK,
+				);
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -968,6 +1010,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/river/Documents/FacebookSDK,
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
@@ -1018,6 +1064,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/river/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1128,6 +1178,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/river/Documents/FacebookSDK,
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
@@ -1163,6 +1217,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/river/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				HEADER_SEARCH_PATHS = (
