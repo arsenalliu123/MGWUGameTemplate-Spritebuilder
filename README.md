@@ -13,9 +13,6 @@
  - Week3: This week, please record your game highest score. 
  - Week4: This week please add suitable background music and sound effect.
  
- - Week2-4: Adding social features
- - Week5: Polish the whole game 
-
 ##Feature List
  - Complicated levels
  - social sharing
