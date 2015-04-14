@@ -82,7 +82,8 @@ static NSString *selectedLevel = @"Sun1";
     _requirelabel.string = [NSString stringWithFormat:@"%d", _scorereq];
     _scorelabel.string = [NSString stringWithFormat:@"%d", _scoreval];
     
-    //_physicsNode.debugDraw = true;
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    [audio playBg:@"bgm.mp3" loop:TRUE];
     return;
 }
 
@@ -97,10 +98,11 @@ static NSString *selectedLevel = @"Sun1";
     _planet.position = [_physicsNode convertToNodeSpace:planetPosition];
     _planet.scale = 0.28;
     [_physicsNode addChild:_planet];
-    
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    // play sound effect
+    [audio playEffect:@"shooting.m4a"];
     /*let the planet move!*/
     _planet.physicsBody.velocity = ccp(500.f, 0);
-    
     return;
 }
 
@@ -121,8 +123,11 @@ static NSString *selectedLevel = @"Sun1";
             self.paused = YES;
             Popup *popup = (Popup *)[CCBReader load:@"LosePopup" owner:self];
             popup.position = ccp(0,0);
-            [popup sharing];
             [self addChild:popup];
+            OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+            // play sound effect
+            [audio stopBg];
+            [audio playEffect:@"failure.mp3"];
             return YES;
         }
     }
@@ -148,6 +153,10 @@ static NSString *selectedLevel = @"Sun1";
             [storeLevel synchronize];
         }
         [self addChild:popup];
+        OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+        // play sound effect
+        [audio stopBg];
+        [audio playEffect:@"success.mp3"];
         return YES;
     }
     return NO;
@@ -170,13 +179,18 @@ static NSString *selectedLevel = @"Sun1";
         selectedLevel = kFirstLevel;
         nextScene = [CCBReader loadAsScene:@"MainScene"];
     }
-    
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    // stop sound effect
+    [audio stopAllEffects];
     CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
     [[CCDirector sharedDirector] presentScene:nextScene withTransition:transition];
 }
 
 - (void)retry {
     CCScene *nextScene = [CCBReader loadAsScene:@"Gameplay"];
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    // stop sound effect
+    [audio stopAllEffects];
     CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
     [[CCDirector sharedDirector] presentScene:nextScene withTransition:transition];
 }

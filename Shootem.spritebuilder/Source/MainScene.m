@@ -9,6 +9,11 @@
     if ([storeLevel objectForKey:@"level"] == nil) {
         resumeButton.enabled = false;
     }
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    [audio preloadEffect:@"shooting.m4a"];
+    [audio preloadEffect:@"failure.mp3"];
+    [audio preloadEffect:@"success.mp3"];
+    [audio preloadEffect:@"bgm.mp3"];
 
 }
 

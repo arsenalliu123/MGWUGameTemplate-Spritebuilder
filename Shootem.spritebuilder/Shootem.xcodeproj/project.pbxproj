@@ -11,6 +11,12 @@
 		57A4EE1B1A98239D0088D2C8 /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A4EE1A1A98239D0088D2C8 /* Gameplay.m */; };
 		57A4EE241A984A3C0088D2C8 /* Sun.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A4EE231A984A3C0088D2C8 /* Sun.m */; };
 		57A4EE271A991F3C0088D2C8 /* Popup.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A4EE261A991F3C0088D2C8 /* Popup.m */; };
+		57AEFABB1ADDBA0400F3E6D2 /* shooting.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 57AEFABA1ADDBA0400F3E6D2 /* shooting.m4a */; };
+		57AEFABC1ADDBA0400F3E6D2 /* shooting.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 57AEFABA1ADDBA0400F3E6D2 /* shooting.m4a */; };
+		57AEFABD1ADDBA0400F3E6D2 /* shooting.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 57AEFABA1ADDBA0400F3E6D2 /* shooting.m4a */; };
+		57AEFAC71ADDBB0900F3E6D2 /* failure.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57AEFAC61ADDBB0900F3E6D2 /* failure.mp3 */; };
+		57AEFAC91ADDBB9000F3E6D2 /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57AEFAC81ADDBB9000F3E6D2 /* success.mp3 */; };
+		57AEFACB1ADDBDBD00F3E6D2 /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 57AEFACA1ADDBDBD00F3E6D2 /* bgm.mp3 */; };
 		57E1663B1ACB5614003B0C21 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E166381ACB5614003B0C21 /* FBSDKCoreKit.framework */; };
 		57E1663C1ACB5614003B0C21 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E166381ACB5614003B0C21 /* FBSDKCoreKit.framework */; };
 		57E1663D1ACB5615003B0C21 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E166381ACB5614003B0C21 /* FBSDKCoreKit.framework */; };
@@ -173,6 +179,10 @@
 		57A4EE231A984A3C0088D2C8 /* Sun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sun.m; path = Source/Sun.m; sourceTree = "<group>"; };
 		57A4EE251A991F3C0088D2C8 /* Popup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Popup.h; path = Source/Popup.h; sourceTree = "<group>"; };
 		57A4EE261A991F3C0088D2C8 /* Popup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Popup.m; path = Source/Popup.m; sourceTree = "<group>"; };
+		57AEFABA1ADDBA0400F3E6D2 /* shooting.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = shooting.m4a; sourceTree = "<group>"; };
+		57AEFAC61ADDBB0900F3E6D2 /* failure.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = failure.mp3; path = Source/Resources/sounds/failure.mp3; sourceTree = "<group>"; };
+		57AEFAC81ADDBB9000F3E6D2 /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = success.mp3; path = Source/Resources/sounds/success.mp3; sourceTree = "<group>"; };
+		57AEFACA1ADDBDBD00F3E6D2 /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgm.mp3; path = Source/Resources/sounds/bgm.mp3; sourceTree = "<group>"; };
 		57E166381ACB5614003B0C21 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		57E166391ACB5614003B0C21 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		57E1663A1ACB5614003B0C21 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -311,6 +321,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57AEFAB31ADDB81E00F3E6D2 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				57AEFABA1ADDBA0400F3E6D2 /* shooting.m4a */,
+			);
+			name = sounds;
+			path = Source/Resources/sounds;
+			sourceTree = "<group>";
+		};
 		5B12100D197483EE004C1E1D /* res */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,9 +493,11 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				57AEFAB31ADDB81E00F3E6D2 /* sounds */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
+				57AEFAC61ADDBB0900F3E6D2 /* failure.mp3 */,
 				57E166561AD4A1CE003B0C21 /* HighScore.h */,
 				57E166571AD4A1CE003B0C21 /* HighScore.m */,
 				57A4EE0D1A981FE10088D2C8 /* Planet.h */,
@@ -514,6 +535,8 @@
 				57A4EE221A984A3C0088D2C8 /* Sun.h */,
 				57A4EE231A984A3C0088D2C8 /* Sun.m */,
 				57A4EE1A1A98239D0088D2C8 /* Gameplay.m */,
+				57AEFACA1ADDBDBD00F3E6D2 /* bgm.mp3 */,
+				57AEFAC81ADDBB9000F3E6D2 /* success.mp3 */,
 				57A4EE251A991F3C0088D2C8 /* Popup.h */,
 				57A4EE261A991F3C0088D2C8 /* Popup.m */,
 				B737893C1807616C0076A88C /* Source */,
@@ -656,7 +679,7 @@
 		B77F1B2617B978D7009739AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Apportable;
 				TargetAttributes = {
 					7A4035FE19DDEE84007B6E8F = {
@@ -734,6 +757,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A4036F719DE401F007B6E8F /* iPad-old.png in Resources */,
+				57AEFABD1ADDBA0400F3E6D2 /* shooting.m4a in Resources */,
 				7A4036F819DE401F007B6E8F /* iPad-old@2x.png in Resources */,
 				7A4036F919DE401F007B6E8F /* iPad.png in Resources */,
 				7A4036FA19DE401F007B6E8F /* iPad@2x.png in Resources */,
@@ -770,6 +794,7 @@
 				927F61B8196C771E000F43EF /* Default-568h@2x.png in Resources */,
 				927F61B9196C771E000F43EF /* iPhone@2x.png in Resources */,
 				927F61BA196C771E000F43EF /* Default.png in Resources */,
+				57AEFABC1ADDBA0400F3E6D2 /* shooting.m4a in Resources */,
 				927F61BB196C771E000F43EF /* iPad-old.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -788,10 +813,14 @@
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
+				57AEFAC91ADDBB9000F3E6D2 /* success.mp3 in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
+				57AEFABB1ADDBA0400F3E6D2 /* shooting.m4a in Resources */,
+				57AEFACB1ADDBDBD00F3E6D2 /* bgm.mp3 in Resources */,
+				57AEFAC71ADDBB0900F3E6D2 /* failure.mp3 in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1119,6 +1148,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					DEBUG,
@@ -1152,6 +1182,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
 					"NS_BLOCK_ASSERTIONS=1",
