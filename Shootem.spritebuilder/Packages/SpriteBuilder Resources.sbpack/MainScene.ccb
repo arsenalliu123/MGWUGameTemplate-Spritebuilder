@@ -485,7 +485,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Resume</string>
+							<string>RESUME</string>
 							<false/>
 						</array>
 					</dict>
@@ -708,7 +708,7 @@
 				<key>displayName</key>
 				<string>CCButton</string>
 				<key>memberVarAssignmentName</key>
-				<string>hsButton</string>
+				<string></string>
 				<key>memberVarAssignmentType</key>
 				<integer>1</integer>
 				<key>properties</key>
@@ -811,7 +811,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>High Score</string>
+							<string>HIGH SCORE</string>
 							<false/>
 						</array>
 					</dict>
@@ -1092,7 +1092,7 @@
 						<string>Block</string>
 						<key>value</key>
 						<array>
-							<string>share</string>
+							<string>credits</string>
 							<integer>1</integer>
 						</array>
 					</dict>
@@ -1137,7 +1137,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Share!</string>
+							<string>CREDITS</string>
 							<false/>
 						</array>
 					</dict>
@@ -1465,7 +1465,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>New Game</string>
+							<string>NEW GAME</string>
 							<false/>
 						</array>
 					</dict>

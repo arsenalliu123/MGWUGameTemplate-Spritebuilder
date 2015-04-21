@@ -13,18 +13,18 @@
 #import "Popup.h"
 
 
-static NSString * const kFirstLevel = @"Sun1";
-static NSString *selectedLevel = @"Sun1";
+static NSString * const kFirstLevel = @"Sun11";
+static NSString *selectedLevel = @"Sun11";
 
 @implementation Gameplay{
     CCPhysicsNode *_physicsNode;
     Planet *_planet;
     Sun *_sun;
-    CCActionRepeatForever *action;
     CCLabelTTF *_scorelabel;
     CCLabelTTF *_requirelabel;
     int _scoreval;
     int _scorereq;
+    bool isPoped;
     float rotateSpeed1;
     float rotateSpeed2;
 }
@@ -35,18 +35,19 @@ static NSString *selectedLevel = @"Sun1";
 
 - (void)didLoadFromCCB{
     
-    self.userInteractionEnabled = TRUE;
-    _physicsNode.collisionDelegate = self;
-    
     //load the last played level
     NSString *tmpLevel;
     NSUserDefaults *loadLevel = [NSUserDefaults standardUserDefaults];
     tmpLevel = [loadLevel stringForKey:@"level"];
+    
     if(tmpLevel != nil){
         selectedLevel = tmpLevel;
     }
     
-        
+    [loadLevel setValue:selectedLevel forKey:@"level"];
+    
+    NSLog(selectedLevel);
+    
     _sun = (Sun *)[CCBReader load:selectedLevel owner:self];
     CGPoint planetPosition = ccp(360, 160);
     _sun.position = [_physicsNode convertToNodeSpace:planetPosition];
@@ -70,8 +71,9 @@ static NSString *selectedLevel = @"Sun1";
     action2.tag = 2;
     NSArray *actionArray = @[action1,action2];
     id sequence = [CCActionSequence actionWithArray:actionArray];
-    action = [CCActionRepeatForever actionWithAction:sequence];
+    CCAction *action = [CCActionRepeatForever actionWithAction:sequence];
     [_sun runAction:action];
+    
     /*
     action.tag = 1;
     CCActionRepeatForever *a = (CCActionRepeatForever *)[_sun getActionByTag:1];
@@ -83,7 +85,14 @@ static NSString *selectedLevel = @"Sun1";
     _scorelabel.string = [NSString stringWithFormat:@"%d", _scoreval];
     
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
-    [audio playBg:@"bgm.mp3" loop:TRUE];
+    
+    
+    [audio playBg:[NSString stringWithFormat: @"%d.mp3", currentLevel/10] loop:TRUE];
+    isPoped = false;
+    
+    //start user interaction NOW
+    self.userInteractionEnabled = TRUE;
+    _physicsNode.collisionDelegate = self;
     return;
 }
 
@@ -91,28 +100,27 @@ static NSString *selectedLevel = @"Sun1";
 
 
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
-    
-    /*add the planet to screen*/
-    _planet = (Planet *)[CCBReader load:@"Planet"];
-    CGPoint planetPosition = ccp(50, 160);
-    _planet.position = [_physicsNode convertToNodeSpace:planetPosition];
-    _planet.scale = 0.28;
-    [_physicsNode addChild:_planet];
-    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
-    // play sound effect
-    [audio playEffect:@"shooting.m4a"];
-    /*let the planet move!*/
-    _planet.physicsBody.velocity = ccp(500.f, 0);
+    if(!isPoped){
+        /*add the planet to screen*/
+        _planet = (Planet *)[CCBReader load:@"Planet"];
+        CGPoint planetPosition = ccp(50, 160);
+        _planet.position = [_physicsNode convertToNodeSpace:planetPosition];
+        _planet.scale = 0.28;
+        [_physicsNode addChild:_planet];
+        OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+        // play sound effect
+        [audio playEffect:@"shooting.m4a"];
+        /*let the planet move!*/
+        _planet.physicsBody.velocity = ccp(500.f, 0);
+    }
     return;
 }
 
 #pragma mark - Collision
-
-
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair sun:(CCNode *)sun planet:(CCNode *)planet{
     
     /*set the planet not to move*/
-    CGPoint tmp_pos = [planet convertToWorldSpace:ccp(39.2,50)];
+    CGPoint tmp_pos = [planet convertToWorldSpace:ccp(34.5,50)];
     tmp_pos = [sun convertToNodeSpace:tmp_pos];
     planet.physicsBody.velocity = ccp(0, 0);
     /*if hit any other planet, call game over popup*/
@@ -120,6 +128,10 @@ static NSString *selectedLevel = @"Sun1";
         float distance = (child.position.x-tmp_pos.x)*(child.position.x-tmp_pos.x)+(child.position.y-tmp_pos.y)*(child.position.y-tmp_pos.y);
         float width = planet.contentSizeInPoints.width*planet.scale;
         if(distance < width*width){
+            planet.position = tmp_pos;
+            [planet removeFromParent];
+            planet.physicsBody = nil;
+            [_sun addChild:planet];
             self.paused = YES;
             Popup *popup = (Popup *)[CCBReader load:@"LosePopup" owner:self];
             popup.position = ccp(0,0);
@@ -128,6 +140,7 @@ static NSString *selectedLevel = @"Sun1";
             // play sound effect
             [audio stopBg];
             [audio playEffect:@"failure.mp3"];
+            isPoped = true;
             return YES;
         }
     }
@@ -157,6 +170,7 @@ static NSString *selectedLevel = @"Sun1";
         // play sound effect
         [audio stopBg];
         [audio playEffect:@"success.mp3"];
+        isPoped = true;
         return YES;
     }
     return NO;
@@ -169,6 +183,7 @@ static NSString *selectedLevel = @"Sun1";
     
     NSUserDefaults *storeLevel = [NSUserDefaults standardUserDefaults];
     [storeLevel setValue:selectedLevel forKey:@"level"];
+    //NSLog(@"stored!");
     [storeLevel synchronize];
     
     CCScene *nextScene = nil;
@@ -184,6 +199,7 @@ static NSString *selectedLevel = @"Sun1";
     [audio stopAllEffects];
     CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
     [[CCDirector sharedDirector] presentScene:nextScene withTransition:transition];
+    [super removeFromParent];
 }
 
 - (void)retry {
@@ -193,6 +209,15 @@ static NSString *selectedLevel = @"Sun1";
     [audio stopAllEffects];
     CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
     [[CCDirector sharedDirector] presentScene:nextScene withTransition:transition];
+    [super removeFromParent];
+}
+
+- (void) goBack{
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
+    CCScene *nextScene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] presentScene:nextScene withTransition:transition];
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    [audio stopEverything];
 }
 
 @end

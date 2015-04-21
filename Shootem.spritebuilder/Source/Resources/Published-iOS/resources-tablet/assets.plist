@@ -17,6 +17,19 @@
 			<key>sourceSize</key>
 			<string>{196, 196}</string>
 		</dict>
+		<key>assets/FB-f-Logo__blue_1024.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1253, 1}, {512, 512}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {512, 512}}</string>
+			<key>sourceSize</key>
+			<string>{512, 512}</string>
+		</dict>
 		<key>assets/Galaxy@4x.png</key>
 		<dict>
 			<key>frame</key>
@@ -120,6 +133,19 @@
 			<string>{{0, 0}, {1250, 549}}</string>
 			<key>sourceSize</key>
 			<string>{1250, 549}</string>
+		</dict>
+		<key>assets/lineDark19@4x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 967}, {40, 40}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {40, 40}}</string>
+			<key>sourceSize</key>
+			<string>{40, 40}</string>
 		</dict>
 	</dict>
 	<key>metadata</key>

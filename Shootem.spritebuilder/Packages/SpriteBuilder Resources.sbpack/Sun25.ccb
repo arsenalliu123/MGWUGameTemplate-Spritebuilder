@@ -176,7 +176,7 @@
 				<key>type</key>
 				<integer>0</integer>
 				<key>value</key>
-				<string>12</string>
+				<string>11</string>
 			</dict>
 			<dict>
 				<key>name</key>
@@ -186,7 +186,7 @@
 				<key>type</key>
 				<integer>1</integer>
 				<key>value</key>
-				<string>100.000000</string>
+				<string>180.000000</string>
 			</dict>
 			<dict>
 				<key>name</key>
@@ -196,7 +196,7 @@
 				<key>type</key>
 				<integer>3</integer>
 				<key>value</key>
-				<string>Sun25</string>
+				<string>Sun26</string>
 			</dict>
 			<dict>
 				<key>name</key>
@@ -206,7 +206,7 @@
 				<key>type</key>
 				<integer>1</integer>
 				<key>value</key>
-				<string>100.000000</string>
+				<string>180.000000</string>
 			</dict>
 		</array>
 		<key>displayName</key>
