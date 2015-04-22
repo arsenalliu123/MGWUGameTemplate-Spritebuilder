@@ -39,6 +39,7 @@
 }
 
 - (void)highScore{
+    /*
     FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
     content.contentURL = [NSURL URLWithString:@"http://rivo.me"];
     NSString *level = @"abcdefg";
@@ -50,9 +51,10 @@
      showFromViewController:[CCDirector sharedDirector]
      withContent:content
      delegate:nil];
-    /* CCScene *hsScene = [CCBReader loadAsScene:@"HighScore"];
+     */
+    CCScene *hsScene = [CCBReader loadAsScene:@"HighScore"];
     CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
-    [[CCDirector sharedDirector] pushScene:hsScene withTransition:transition];*/
+    [[CCDirector sharedDirector] pushScene:hsScene withTransition:transition];
 }
 
 - (void)credits{

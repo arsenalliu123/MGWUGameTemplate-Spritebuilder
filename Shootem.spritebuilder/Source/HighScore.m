@@ -7,21 +7,25 @@
 //
 
 #import "HighScore.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
 
 @implementation HighScore{
     CCLabelTTF *_high;
     NSString *level;
+    CCButton *shareButton;
 }
 
 - (void) didLoadFromCCB{
     level = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"];
     _high.string = [NSString stringWithFormat:@"Level %@", [level substringFromIndex:3]];
+    shareButton.enabled = false;
 }
 
 - (void) goBack{
+    CCScene *mainmenu = [CCBReader loadAsScene:@"MainScene"];
     CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
-    [[CCDirector sharedDirector] popSceneWithTransition:transition];
+    [[CCDirector sharedDirector] presentScene:mainmenu withTransition:transition];
 }
 
 - (void) sharing{
@@ -30,10 +34,9 @@
     content.contentTitle = [NSString stringWithFormat: @"I've finished level %@ on Shootem!, how about you?", [level substringFromIndex:3]];
     content.contentDescription = @"Shootem! is yet another shooting game. The rest of it is for you to explore!";
     
-    [FBSDKShareDialog
-     showFromViewController:[CCDirector sharedDirector]
-     withContent:content
-     delegate:nil];
+    [FBSDKShareDialog showFromViewController:[CCDirector sharedDirector]
+                                 withContent:content
+                                    delegate:nil];
 }
 
 @end

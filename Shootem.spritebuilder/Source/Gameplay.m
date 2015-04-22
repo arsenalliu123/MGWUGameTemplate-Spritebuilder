@@ -29,10 +29,9 @@ static NSString *selectedLevel = @"Sun11";
     float rotateSpeed2;
 }
 
-- (int)getLevel:(NSString *)selectedLevel{
-    return [[selectedLevel substringFromIndex:3] intValue];
-}
+#pragma mark - loading
 
+//load from CCB file
 - (void)didLoadFromCCB{
     
     //load the last played level
@@ -46,29 +45,26 @@ static NSString *selectedLevel = @"Sun11";
     
     [loadLevel setValue:selectedLevel forKey:@"level"];
     
-    NSLog(selectedLevel);
+    //NSLog(selectedLevel);
     
     _sun = (Sun *)[CCBReader load:selectedLevel owner:self];
     CGPoint planetPosition = ccp(360, 160);
     _sun.position = [_physicsNode convertToNodeSpace:planetPosition];
     [_physicsNode addChild:_sun];
     
-    /*let the sun rotate!*/
+    //let the sun rotate!
     //TODO: more complicated levels
     
     int currentLevel = [self getLevel:selectedLevel];
+
     float time1 = 1.8;
     float time2 = 0.6;
-    
-    if (currentLevel>5) {
-        time1 = 1.8+(arc4random_uniform(1000)-500)/1000.0*0.6;
-        time2 = 0.6+(arc4random_uniform(1000)-500)/1000.0*0.2;
-    }
     
     CCAction *action1 = [CCActionRotateBy actionWithDuration:time1 angle:time1*_sun.rotateSpeed1];
     action1.tag = 1;
     CCAction *action2 = [CCActionRotateBy actionWithDuration:time2 angle:time2*_sun.rotateSpeed2];
     action2.tag = 2;
+    
     NSArray *actionArray = @[action1,action2];
     id sequence = [CCActionSequence actionWithArray:actionArray];
     CCAction *action = [CCActionRepeatForever actionWithAction:sequence];
@@ -87,7 +83,7 @@ static NSString *selectedLevel = @"Sun11";
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
     
     
-    [audio playBg:[NSString stringWithFormat: @"%d.mp3", currentLevel/10] loop:TRUE];
+    [audio playBg:[NSString stringWithFormat: @"%d.mp3", currentLevel%4] loop:TRUE];
     isPoped = false;
     
     //start user interaction NOW
@@ -96,9 +92,10 @@ static NSString *selectedLevel = @"Sun11";
     return;
 }
 
+
 #pragma mark - Touch Handle
 
-
+//touch handler
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     if(!isPoped){
         /*add the planet to screen*/
@@ -110,6 +107,15 @@ static NSString *selectedLevel = @"Sun11";
         OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
         // play sound effect
         [audio playEffect:@"shooting.m4a"];
+        // load particle effect
+        CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"Shoot"];
+        // make the particle effect clean itself up, once it is completed
+        explosion.autoRemoveOnFinish = TRUE;
+        // place the particle effect on the seals position
+        explosion.position = _planet.position;
+        // add the particle effect to the same node the seal is on
+        [_planet.parent addChild:explosion];
+        
         /*let the planet move!*/
         _planet.physicsBody.velocity = ccp(500.f, 0);
     }
@@ -176,7 +182,7 @@ static NSString *selectedLevel = @"Sun11";
     return NO;
 }
 
-
+//load next level
 - (void)loadnextLevel {
     
     selectedLevel = _sun.nextLevelName;
@@ -202,6 +208,7 @@ static NSString *selectedLevel = @"Sun11";
     [super removeFromParent];
 }
 
+//toggled when user hit play again
 - (void)retry {
     CCScene *nextScene = [CCBReader loadAsScene:@"Gameplay"];
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
@@ -212,12 +219,20 @@ static NSString *selectedLevel = @"Sun11";
     [super removeFromParent];
 }
 
+//toggle when going back
 - (void) goBack{
     CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
     CCScene *nextScene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector] presentScene:nextScene withTransition:transition];
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
     [audio stopEverything];
+}
+
+
+#pragma mark - helper function
+
+- (int)getLevel:(NSString *)selectedLevel{
+    return [[selectedLevel substringFromIndex:3] intValue];
 }
 
 @end
