@@ -12,6 +12,7 @@
  - Week2: Sharing your game with your friend to make it popular! This week, please add social function that can post your game in your social network
  - Week3: This week, please record your game highest score. 
  - Week4: This week please add suitable background music and sound effect.
+ - Week5: This week, Yichen adds three background musics to different levels, creates up to 30 levels and adds some special effect.
  
 ##Feature List
  - Complicated levels
