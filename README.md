@@ -16,5 +16,5 @@
  
 ##Feature List
  - Complicated levels
- - social sharing
- - spining features
+ - Social sharing
+ - Sound and particle effects

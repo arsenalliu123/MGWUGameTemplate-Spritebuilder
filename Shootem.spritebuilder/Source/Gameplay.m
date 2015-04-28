@@ -81,9 +81,8 @@ static NSString *selectedLevel = @"Sun11";
     _scorelabel.string = [NSString stringWithFormat:@"%d", _scoreval];
     
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
-    
-    
     [audio playBg:[NSString stringWithFormat: @"%d.mp3", currentLevel%4] loop:TRUE];
+    
     isPoped = false;
     
     //start user interaction NOW
