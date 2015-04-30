@@ -74,4 +74,20 @@
                                                        annotation:annotation];
 }
 
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    [[CCDirector sharedDirector] pause];
+    [[CCDirector sharedDirector] stopAnimation]; // Add
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [[CCDirector sharedDirector] resume];
+    [[CCDirector sharedDirector] startAnimation]; // Add
+}
+
+- (void)dealloc {
+    [[CCDirector sharedDirector] end];
+}
+
 @end

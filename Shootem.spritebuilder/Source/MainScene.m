@@ -1,6 +1,4 @@
 #import "MainScene.h"
-#import <FBSDKShareKit/FBSDKShareKit.h>
-
 
 @implementation MainScene{
     CCButton *resumeButton;
@@ -16,7 +14,7 @@
     [audio preloadEffect:@"failure.mp3"];
     [audio preloadEffect:@"success.mp3"];
     for (int i=0; i<4; i++) {
-        [audio preloadEffect:[NSString stringWithFormat: @"%d.mp3", i]];
+        [audio preloadBg:[NSString stringWithFormat: @"%d.mp3", i]];
     }
 
 }
@@ -32,7 +30,7 @@
     [[CCDirector sharedDirector] pushScene:gameplayScene withTransition:transition];
 }
 
-- (void)resume {
+- (void)resumeGame {
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Gameplay"];
     CCTransition *transition = [CCTransition transitionFadeWithDuration:0.8f];
     [[CCDirector sharedDirector] pushScene:gameplayScene withTransition:transition];

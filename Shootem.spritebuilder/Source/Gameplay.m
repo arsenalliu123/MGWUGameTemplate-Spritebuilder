@@ -13,8 +13,8 @@
 #import "Popup.h"
 
 
-static NSString * const kFirstLevel = @"Sun11";
-static NSString *selectedLevel = @"Sun11";
+static NSString * const kFirstLevel = @"Sun1";
+static NSString *selectedLevel = @"Sun1";
 
 @implementation Gameplay{
     CCPhysicsNode *_physicsNode;
@@ -22,6 +22,7 @@ static NSString *selectedLevel = @"Sun11";
     Sun *_sun;
     CCLabelTTF *_scorelabel;
     CCLabelTTF *_requirelabel;
+    CCLabelTTF *_levelDisplay;
     int _scoreval;
     int _scorereq;
     bool isPoped;
@@ -42,7 +43,9 @@ static NSString *selectedLevel = @"Sun11";
     if(tmpLevel != nil){
         selectedLevel = tmpLevel;
     }
-    
+    else{
+        selectedLevel = kFirstLevel;
+    }
     [loadLevel setValue:selectedLevel forKey:@"level"];
     
     //NSLog(selectedLevel);
@@ -79,6 +82,7 @@ static NSString *selectedLevel = @"Sun11";
     _scorereq = _sun.requirement;
     _requirelabel.string = [NSString stringWithFormat:@"%d", _scorereq];
     _scorelabel.string = [NSString stringWithFormat:@"%d", _scoreval];
+    _levelDisplay.string = [NSString stringWithFormat:@"%d", [self getLevel:selectedLevel]];
     
     OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
     [audio playBg:[NSString stringWithFormat: @"%d.mp3", currentLevel%4] loop:TRUE];
