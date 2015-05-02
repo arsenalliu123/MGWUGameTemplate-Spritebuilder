@@ -18,6 +18,7 @@ static NSString *selectedLevel = @"Sun1";
 
 @implementation Gameplay{
     CCPhysicsNode *_physicsNode;
+    CCNode *_levelNode;
     Planet *_planet;
     Sun *_sun;
     CCLabelTTF *_scorelabel;
@@ -51,9 +52,7 @@ static NSString *selectedLevel = @"Sun1";
     //NSLog(selectedLevel);
     
     _sun = (Sun *)[CCBReader load:selectedLevel owner:self];
-    CGPoint planetPosition = ccp(360, 160);
-    _sun.position = [_physicsNode convertToNodeSpace:planetPosition];
-    [_physicsNode addChild:_sun];
+    [_levelNode addChild:_sun];
     
     //let the sun rotate!
     //TODO: more complicated levels

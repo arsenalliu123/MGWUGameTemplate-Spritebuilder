@@ -77,7 +77,7 @@
 						<key>value</key>
 						<array>
 							<real>0.50519317388534546</real>
-							<real>0.16249999403953552</real>
+							<real>0.17499999701976776</real>
 							<integer>1</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -699,9 +699,9 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>242.91580200195312</real>
+							<real>325.08419799804688</real>
 							<real>136.73988342285156</real>
-							<integer>0</integer>
+							<integer>3</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -907,9 +907,9 @@ BY </string>
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>399.94970703125</real>
+							<real>168.05029296875</real>
 							<real>136.73988342285156</real>
-							<integer>0</integer>
+							<integer>3</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -1542,9 +1542,9 @@ BY</string>
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>286.94970703125</real>
-							<real>52.023983001708984</real>
-							<integer>0</integer>
+							<real>281.05029296875</real>
+							<real>52.02398681640625</real>
+							<integer>3</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -1750,9 +1750,9 @@ BY</string>
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>441.94970703125</real>
-							<real>52.023983001708984</real>
-							<integer>0</integer>
+							<real>126.05029296875</real>
+							<real>52.02398681640625</real>
+							<integer>3</integer>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -1924,6 +1924,8 @@ BY</string>
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -2322,8 +2324,6 @@ BY</string>
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

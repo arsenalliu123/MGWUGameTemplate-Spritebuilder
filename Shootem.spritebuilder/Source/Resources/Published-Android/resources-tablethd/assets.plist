@@ -7,7 +7,7 @@
 		<key>assets/Earth-Planet@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1, 1654}, {392, 392}}</string>
+			<string>{{3661, 276}, {392, 392}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -20,7 +20,7 @@
 		<key>assets/FB-f-Logo__blue_1024.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{2503, 1}, {1024, 1024}}</string>
+			<string>{{2704, 1403}, {1024, 1024}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -33,11 +33,11 @@
 		<key>assets/Galaxy@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1, 1102}, {550, 269}}</string>
+			<string>{{3203, 1}, {550, 269}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
-			<true/>
+			<false/>
 			<key>sourceColorRect</key>
 			<string>{{0, 0}, {550, 269}}</string>
 			<key>sourceSize</key>
@@ -46,7 +46,7 @@
 		<key>assets/Giant-Planet@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{395, 1592}, {273, 273}}</string>
+			<string>{{3755, 1}, {273, 273}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -59,7 +59,7 @@
 		<key>assets/Sun@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{670, 1591}, {456, 456}}</string>
+			<string>{{3203, 272}, {456, 456}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -72,11 +72,11 @@
 		<key>assets/buttons-28@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{518, 1102}, {487, 126}}</string>
+			<string>{{491, 3965}, {487, 126}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
-			<true/>
+			<false/>
 			<key>sourceColorRect</key>
 			<string>{{0, 0}, {487, 126}}</string>
 			<key>sourceSize</key>
@@ -85,11 +85,11 @@
 		<key>assets/buttons-29@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{646, 1102}, {487, 116}}</string>
+			<string>{{1470, 3965}, {487, 116}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
-			<true/>
+			<false/>
 			<key>sourceColorRect</key>
 			<string>{{0, 0}, {487, 116}}</string>
 			<key>sourceSize</key>
@@ -98,11 +98,11 @@
 		<key>assets/buttons-41@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{272, 1102}, {488, 126}}</string>
+			<string>{{1, 3965}, {488, 126}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
-			<true/>
+			<false/>
 			<key>sourceColorRect</key>
 			<string>{{0, 0}, {488, 126}}</string>
 			<key>sourceSize</key>
@@ -111,24 +111,50 @@
 		<key>assets/buttons-42@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{400, 1102}, {488, 116}}</string>
+			<string>{{980, 3965}, {488, 116}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
-			<true/>
+			<false/>
 			<key>sourceColorRect</key>
 			<string>{{0, 0}, {488, 116}}</string>
 			<key>sourceSize</key>
 			<string>{488, 116}</string>
 		</dict>
-		<key>assets/cosmos@4x.png</key>
+		<key>assets/cosmos2@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1, 1}, {2500, 1099}}</string>
+			<string>{{1, 1403}, {2560, 1600}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {2560, 1600}}</string>
+			<key>sourceSize</key>
+			<string>{2560, 1600}</string>
+		</dict>
+		<key>assets/cosmos3@4x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {3200, 1400}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
 			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {3200, 1400}}</string>
+			<key>sourceSize</key>
+			<string>{3200, 1400}</string>
+		</dict>
+		<key>assets/cosmos@4x.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1603, 1403}, {2500, 1099}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
 			<key>sourceColorRect</key>
 			<string>{{0, 0}, {2500, 1099}}</string>
 			<key>sourceSize</key>
@@ -137,7 +163,7 @@
 		<key>assets/lineDark19@4x.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{395, 1867}, {80, 80}}</string>
+			<string>{{1959, 3905}, {80, 80}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -153,7 +179,7 @@
 		<key>format</key>
 		<integer>2</integer>
 		<key>size</key>
-		<string>{4096, 2048}</string>
+		<string>{4096, 4096}</string>
 		<key>textureFileName</key>
 		<string>assets.png</string>
 	</dict>

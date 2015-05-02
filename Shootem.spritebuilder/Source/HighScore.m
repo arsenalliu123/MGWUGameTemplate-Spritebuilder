@@ -18,8 +18,13 @@
 
 - (void) didLoadFromCCB{
     level = [[NSUserDefaults standardUserDefaults] objectForKey:@"highScore"];
-    _high.string = [NSString stringWithFormat:@"Level %@", [level substringFromIndex:3]];
-    shareButton.enabled = false;
+    if(level == nil){
+        shareButton.enabled = false;
+        _high.string = @"NEVER";
+    }
+    else{
+        _high.string = [NSString stringWithFormat:@"Level %@", [level substringFromIndex:3]];
+    }
 }
 
 - (void) goBack{
