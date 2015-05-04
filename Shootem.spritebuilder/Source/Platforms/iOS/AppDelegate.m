@@ -77,13 +77,21 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     [[CCDirector sharedDirector] pause];
-    [[CCDirector sharedDirector] stopAnimation]; // Add
+    [[CCDirector sharedDirector] stopAnimation];
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    if(audio.bgPlaying){
+        [audio setBgPaused:YES];
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     [[CCDirector sharedDirector] resume];
     [[CCDirector sharedDirector] startAnimation]; // Add
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    if(audio.bgPaused){
+        [audio playBg];
+    }
 }
 
 - (void)dealloc {
