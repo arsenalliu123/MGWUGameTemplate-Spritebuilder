@@ -146,8 +146,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -465,11 +463,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>44.400001525878906</real>
-							<real>30</real>
-							<integer>1</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<real>0.20234376192092896</real>
+							<real>0.061458349227905273</real>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -639,6 +637,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -672,11 +672,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>82.599998474121094</real>
-							<real>30</real>
-							<integer>1</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<real>0.12890625</real>
+							<real>0.061458349227905273</real>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -879,11 +879,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>121</real>
-							<real>30</real>
-							<integer>1</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<real>0.065625011920928955</real>
+							<real>0.061458349227905273</real>
+							<integer>2</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -1413,11 +1413,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>83</real>
-							<real>30</real>
+							<real>0.15742188692092896</real>
+							<real>0.953125</real>
 							<integer>2</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -1620,11 +1620,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>21</real>
-							<real>30</real>
+							<real>0.049023449420928955</real>
+							<real>0.046875</real>
+							<integer>3</integer>
 							<integer>2</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>

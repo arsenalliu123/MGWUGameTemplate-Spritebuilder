@@ -22,6 +22,9 @@
 		572526C01AE4D8BA009D5FCE /* 0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 572526BF1AE4D8BA009D5FCE /* 0.mp3 */; };
 		572526C11AE4D8BA009D5FCE /* 0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 572526BF1AE4D8BA009D5FCE /* 0.mp3 */; };
 		572526C21AE4D8BA009D5FCE /* 0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 572526BF1AE4D8BA009D5FCE /* 0.mp3 */; };
+		577FCF411B0856470044CD6C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577FCF401B0856470044CD6C /* Images.xcassets */; };
+		577FCF431B08610A0044CD6C /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 577FCF421B08610A0044CD6C /* iAd.framework */; };
+		577FCF4A1B0866290044CD6C /* MyiAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 577FCF491B0866290044CD6C /* MyiAd.m */; };
 		57A4EE0F1A981FE10088D2C8 /* Planet.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A4EE0E1A981FE10088D2C8 /* Planet.m */; };
 		57A4EE1B1A98239D0088D2C8 /* Gameplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A4EE1A1A98239D0088D2C8 /* Gameplay.m */; };
 		57A4EE241A984A3C0088D2C8 /* Sun.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A4EE231A984A3C0088D2C8 /* Sun.m */; };
@@ -191,6 +194,10 @@
 		572526B01AE4D825009D5FCE /* 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2.mp3; sourceTree = "<group>"; };
 		572526B11AE4D825009D5FCE /* 3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3.mp3; sourceTree = "<group>"; };
 		572526BF1AE4D8BA009D5FCE /* 0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0.mp3; sourceTree = "<group>"; };
+		577FCF401B0856470044CD6C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Shootem iOS/Images.xcassets"; sourceTree = SOURCE_ROOT; };
+		577FCF421B08610A0044CD6C /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		577FCF481B0866290044CD6C /* MyiAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyiAd.h; path = Source/MyiAd.h; sourceTree = "<group>"; };
+		577FCF491B0866290044CD6C /* MyiAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyiAd.m; path = Source/MyiAd.m; sourceTree = "<group>"; };
 		57A4EE0D1A981FE10088D2C8 /* Planet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Planet.h; path = Source/Planet.h; sourceTree = "<group>"; };
 		57A4EE0E1A981FE10088D2C8 /* Planet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Planet.m; path = Source/Planet.m; sourceTree = "<group>"; };
 		57A4EE191A98239D0088D2C8 /* Gameplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Gameplay.h; path = Source/Gameplay.h; sourceTree = "<group>"; };
@@ -320,6 +327,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577FCF431B08610A0044CD6C /* iAd.framework in Frameworks */,
 				7A97911819E631CD001FFC4D /* libcocos2d.a in Frameworks */,
 				57E1663B1ACB5614003B0C21 /* FBSDKCoreKit.framework in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
@@ -555,6 +563,8 @@
 		B77F1B2517B978D7009739AE = {
 			isa = PBXGroup;
 			children = (
+				577FCF481B0866290044CD6C /* MyiAd.h */,
+				577FCF491B0866290044CD6C /* MyiAd.m */,
 				57A4EE191A98239D0088D2C8 /* Gameplay.h */,
 				572526A81AE4CFD8009D5FCE /* Credit.h */,
 				572526A91AE4CFD8009D5FCE /* Credit.m */,
@@ -585,6 +595,7 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				577FCF421B08610A0044CD6C /* iAd.framework */,
 				57E166381ACB5614003B0C21 /* FBSDKCoreKit.framework */,
 				57E166391ACB5614003B0C21 /* FBSDKLoginKit.framework */,
 				57E1663A1ACB5614003B0C21 /* FBSDKShareKit.framework */,
@@ -616,6 +627,7 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				577FCF401B0856470044CD6C /* Images.xcassets */,
 				7A40366119DDF8C2007B6E8F /* Platforms */,
 				5B12100D197483EE004C1E1D /* res */,
 				B73789911807667A0076A88C /* Icons */,
@@ -710,7 +722,7 @@
 						CreatedOnToolsVersion = 6.0.1;
 					};
 					B77F1B2D17B978D7009739AE = {
-						DevelopmentTeam = 9VUC3R8D65;
+						DevelopmentTeam = 62X82BG622;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -837,6 +849,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
+				577FCF411B0856470044CD6C /* Images.xcassets in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
@@ -940,6 +953,7 @@
 				57A4EE271A991F3C0088D2C8 /* Popup.m in Sources */,
 				57E166581AD4A1CE003B0C21 /* HighScore.m in Sources */,
 				572526AA1AE4CFD8009D5FCE /* Credit.m in Sources */,
+				577FCF4A1B0866290044CD6C /* MyiAd.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
@@ -1184,6 +1198,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1243,6 +1258,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1282,6 +1299,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

@@ -11,6 +11,7 @@
 #import "Planet.h"
 #import "Sun.h"
 #import "Popup.h"
+#import "Platforms/iOS/AppDelegate.h"
 
 
 static NSString * const kFirstLevel = @"Sun1";
@@ -91,6 +92,8 @@ static NSString *selectedLevel = @"Sun1";
     //start user interaction NOW
     self.userInteractionEnabled = TRUE;
     _physicsNode.collisionDelegate = self;
+    
+    
     return;
 }
 

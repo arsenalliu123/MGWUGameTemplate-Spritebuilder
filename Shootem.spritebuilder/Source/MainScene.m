@@ -1,4 +1,6 @@
 #import "MainScene.h"
+#import "MyiAd.h"
+#import "Platforms/iOS/AppDelegate.h"
 
 @implementation MainScene{
     CCButton *resumeButton;
@@ -16,7 +18,9 @@
     for (int i=0; i<4; i++) {
         [audio preloadBg:[NSString stringWithFormat: @"%d.mp3", i]];
     }
-
+    
+    AppController *app = (((AppController*) [UIApplication sharedApplication].delegate));
+    [app ShowIAdBanner];
 }
 
 - (void)newGame {

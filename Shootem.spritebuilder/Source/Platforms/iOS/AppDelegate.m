@@ -54,9 +54,59 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
+    
+    // This is the only app delegate method you need to implement when inheriting from CCAppDelegate.
+    // This method is a good place to add one time setup code that only runs when your app is first launched.
+
+    
+    self.isBannerOn=false;
+    self.isBannerOnTop = true;
+    mIAd = [[MyiAd alloc] init];
+    
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
 }
+
+-(void)ShowIAdBanner
+{
+    if([[NSUserDefaults standardUserDefaults] integerForKey:@"adDisabled"]!=0)
+    {
+        self.isBannerOn = false;
+        [self hideIAdBanner];
+        return;
+    }
+    
+    self.isBannerOn = true;
+    
+    if(mIAd)
+    {
+        [mIAd showBannerView];
+    }
+    else
+    {
+        mIAd = [[MyiAd alloc] init];
+    }
+}
+
+
+-(void)hideIAdBanner
+{
+    self.isBannerOn = false;
+    if(mIAd)
+        [mIAd hideBannerView];
+}
+
+-(void)bannerDidFail
+{
+    mIAd = nil;
+    
+#if TARGET_IPHONE_SIMULATOR
+    UIAlertView* alert= [[UIAlertView alloc] initWithTitle: @"Simulator_ShowAlert!" message: @"didFailToReceiveAdWithError:"
+                                                  delegate: NULL cancelButtonTitle: @"OK" otherButtonTitles: NULL];
+    [alert show];
+#endif
+}
+
 
 - (CCScene*) startScene
 {
